@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    web:
+        image: nginx_php
+        container_name: myhttp
+        command: /bin/bash /src/run.sh
+        volumes:
+            - ./report_resource:/report_resource  # 注意目录用户和组要和php进程的一致，不然回报权限问题
+            - ./tmp_report_dir:/tmp_report_dir
+            - ./src:/src
+        ports:
+            - "8010:80"
+        environment:
+            - NGINX_PORT=80
