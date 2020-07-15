@@ -1,6 +1,6 @@
 FROM nginx
 
-LABEL maintainer="wangke@iauto.com"
+LABEL maintainer="wangke857022523@163.com"
 
 # 按照调试和编译依赖的包
 RUN apt-get update \
